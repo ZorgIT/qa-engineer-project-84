@@ -1,0 +1,124 @@
+---
+  test-cases:
+  - summary: |
+      Переход в корзину товаров без обновления страницы
+    status: pass
+
+  - summary: |
+      Успешное обновление карточек товаров с применением кнопок Предыдущая/Следующая
+    status: fail
+
+  - summary: |
+      Отсутствие кнопки Next при окончании каталога товаров
+    status: pass
+
+  - summary: |
+      Фильтрация товаров должна применяться ко всей базе товаров, а не только к текущей странице
+    status: fail
+
+  - summary: |
+      Проверка фильтрации товаров по категориям
+    status: fail
+
+  - summary: |
+      Проверка фильтрации товаров по бренду
+    status: fail
+
+  - summary: |
+      Проверка фильтрации по наличию товара (In Stock)
+    status: fail
+
+  - summary: |
+      Проверка работы поиска товаров
+    status: fail
+
+  - summary: |
+      Проверка изменения языка интерфейса
+    status: fail
+
+  - summary: |
+      Проверка отображения скидки на товары на странице продукта
+    status: pass  
+
+  - summary: |
+      Проверка работы фильтра по цене
+    status: pass
+    
+  - summary: |
+      Проверка добавления товара в корзину
+    status: pass
+
+  bugreports:
+  - summary: |
+      Не корректная работа фильтрации товаров
+    environment: |
+      https://products-store-git-v2bugfixes-hexlet-components.vercel.app/  Version2. ПК, Windows 10, Google chrome 136.0.7103.49
+    steps-to-reproduce: |
+      1. Открыть страницу Store
+      2. Воспользоваться любым из представленных фильтров (категория, бренд, in stock, стоимость)
+    expected-result: |
+      фильтрация должна происходить по всему каталогу товаров магазина
+    actual-result: |
+      фильтрация выполняется только для товаров находящихся на загруженной странице с карточками товаров
+
+  - summary: |
+      При переключении языка отображется описание товаров на английском языке
+    environment: |
+      https://products-store-git-v2bugfixes-hexlet-components.vercel.app/  Version2. ПК, Windows 10, Google chrome 136.0.7103.49
+    steps-to-reproduce: |
+      1. Открыть страницу Store
+      2. Выполнить переключение языка с Enlgish на Russian
+    expected-result: |
+      Интерфейс и описание товаров должны быть переведены на русский язык
+    actual-result: |
+      Элементы интерфейса отображаются на русском языке, описание товаров отображается на английском
+
+  - summary: |
+      Отсуствует личный кабинет пользователя, регистрация авторизация
+    environment: |
+      https://products-store-git-v2bugfixes-hexlet-components.vercel.app/  Version2. ПК, Windows 10, Google chrome 136.0.7103.49
+    steps-to-reproduce: |
+      1. Открыть страницу Store
+    expected-result: |
+      Кнопка входа\регистрации пользователя дложна находиться на сайте
+    actual-result: |
+      Отсуствует личный кабинет пользователя, страница регистрации, авторизации
+
+  - summary: |
+      Не корректное прдеставление фильтра по производителю
+    environment: |
+      https://products-store-git-v2bugfixes-hexlet-components.vercel.app/  Version2. ПК, Windows 10, Google chrome 136.0.7103.49
+    steps-to-reproduce: |
+      1. Открыть страницу Store
+      2. посмотреть на фильтр по производителю
+    expected-result: |
+      Представленны производители в соотвествии с выбраной категорией товаров
+    actual-result: |
+      Присутсвуют пустые поля. Производители товаров не соотвествуют выбранной категории товаров (В категории laptops доступен к выбару производитель Nike, Puma)
+
+  - summary: |
+      Не корректный поиск по несуществующему товару
+    environment: |
+      https://products-store-git-v2bugfixes-hexlet-components.vercel.app/  Version2. ПК, Windows 10, Google chrome 136.0.7103.49
+    steps-to-reproduce: |
+      1. Открыть страницу Store
+      2. Воспользоваться строкой поиска
+    expected-result: |
+      Карточки товаров не отображаются т.к. не находится элемент в базе (или должно выводиться сообщение)
+    actual-result: |
+      В случаее если товар не найден отображаются карточки товаров не относящихся к поиску (должно быть пусто или сообщение)В
+
+  - summary: |
+      Корректный поиск по существующему товару
+    environment: |
+      https://products-store-git-v2bugfixes-hexlet-components.vercel.app/  Version2. ПК, Windows 10, Google chrome 136.0.7103.49
+    steps-to-reproduce: |
+      1. Открыть страницу Store
+      2. Воспользоваться перейти на вторую страницу каталога по кнопке next
+      3. Запомнить наименование товара (любого из представленных карторчке)
+      4. Венруться на страницу назад, воспользоваться строкой поиска, ввести наименование товара со страницы 2
+    expected-result: |
+      Отображается одна или более карточек товаров
+    actual-result: |
+      Поиск выполняется только по текущей странице, а не в базе данных магазина, поиск не выдает карточку искомого товара.
+    
