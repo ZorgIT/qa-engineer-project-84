@@ -1,9 +1,10 @@
 ---
 - summary: |
     Переход в корзину товаров без обновления страницы
+  test-data: none
   prerequisites:
     Не требуется
-  requirement:
+  requirement: |
     - Открыта страница Store
   steps:
     - Нажимаем кнопку "Cart"
@@ -12,9 +13,10 @@
 
 - summary: |
     Успешное обновление карточек товаров с применением кнопок Предыдущая/Следующая
+  test-data: none
   prerequisites:
     Не требуется
-  requirement:
+  requirement: |
     - Открыта страница Store
   steps:
     - Нажимаем кнопку "Next"
@@ -26,9 +28,10 @@
 
 - summary: |
     Отсутствие кнопки Next при окончании каталога товаров
+  test-data: none
   prerequisites:
     Не требуется
-  requirement:
+  requirement: |
     - Открыта страница Store
   steps:
     - Нажимаем кнопку "Next" до достижения последней страницы каталога
@@ -38,9 +41,10 @@
 
 - summary: |
     Фильтрация товаров должна применяться ко всей базе товаров, а не только к текущей странице
+  test-data: none
   prerequisites:
     Не требуется
-  requirement:
+  requirement: |
     - Открыта страница Store
   steps:
     - Применяем любой фильтр (например, выбираем бренд "Dior")
@@ -59,9 +63,10 @@
 
 - summary: |
     Проверка фильтрации товаров по категориям
+  test-data: none
   prerequisites:
     Не требуется
-  requirement:
+  requirement: |
     - Открыта страница Store
     - Фильтрация товаров должна применяться ко всей базе товаров, а не только к текущей странице
   steps:
@@ -72,9 +77,10 @@
 
 - summary: |
     Проверка фильтрации товаров по бренду
+  test-data: none
   prerequisites:
     Не требуется
-  requirement:
+  requirement: |
     - Открыта страница Store
     - Фильтрация товаров должна применяться ко всей базе товаров, а не только к текущей странице
   steps:
@@ -85,9 +91,10 @@
 
 - summary: |
     Проверка фильтрации по наличию товара (In Stock)
+  test-data: none
   prerequisites:
     Не требуется
-  requirement:
+  requirement: |
     - Открыта страница Store
     - Фильтрация товаров должна применяться ко всей базе товаров, а не только к текущей странице
   steps:
@@ -98,9 +105,10 @@
 
 - summary: |
     Проверка работы поиска товаров
+  test-data: none
   prerequisites:
     Не требуется
-  requirement:
+  requirement: |
     - Открыта страница Store
     - Фильтрация товаров должна применяться ко всей базе товаров, а не только к текущей странице
   steps:
@@ -111,9 +119,10 @@
 
 - summary: |
     Проверка изменения языка интерфейса
+  test-data: none
   prerequisites:
     Не требуется
-  requirement:
+  requirement: |
     - Открыта страница Store
   steps:
     - Изменяем язык через выпадающий список "Language"
@@ -122,9 +131,10 @@
 
 - summary: |
     Проверка отображения скидки на товары
+  test-data: none
   prerequisites:
     Не требуется
-  requirement:
+  requirement: |
     - Открыта страница Store
   steps:
     - Находим товар со скидкой (где указаны две цены)
@@ -135,9 +145,10 @@
 
 - summary: |
     Проверка работы фильтра по цене
+  test-data: none
   prerequisites:
     Не требуется
-  requirement:
+  requirement: |
     - Открыта страница Store
   steps:
     - Устанавливаем диапазон цен от 10 до 50
@@ -147,9 +158,10 @@
 
 - summary: |
     Проверка добавления товара в корзину
+  test-data: none
   prerequisites:
     Не требуется
-  requirement:
+  requirement: |
     - Открыта страница Store
   steps:
     - Нажимаем кнопку "Add to cart" у любого товара
